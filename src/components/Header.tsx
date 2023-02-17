@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from "react-router-dom";
-import { RmdbLogo } from './svg/RmdbLogo';
+import SearchInput from './SearchInput';
 import { RmdbLogoSmall } from './svg/RmdbLogoSmall';
 
 interface IHeader {
@@ -14,7 +14,7 @@ export const Header: React.FC<IHeader> = ({ setQuery }) => {
                 <NavLink to="/">
                     <div className='flex items-center cursor-pointer'>
                         <div className='invisible md:visible'>
-                            <RmdbLogo className='w-[150px] h-[50px]' />
+                            <span className='text-white text-3xl tracking-wider font-bold' >ELOTUS MOVIE</span>
                         </div>
                         <div className='absolute md:invisible pt-2'>
                             <img src="../assets/rmdb-logo-small.svg" width={42} height={42} alt='rmdb-logo-small' />
@@ -22,11 +22,11 @@ export const Header: React.FC<IHeader> = ({ setQuery }) => {
                         </div>
                     </div>
                 </NavLink>
-                {/* {setQuery ? (
+                {setQuery ? (
                     <div className='flex items-center relative'>
                         <SearchInput setQuery={setQuery} />
                     </div>
-                ) : null} */}
+                ) : null}
             </div>
         </div>
     )
