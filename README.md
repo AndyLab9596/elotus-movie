@@ -36,7 +36,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-> I also deployed this project on vercel so you can browse it more easily
+> I also deployed this project on vercel so you can browse it more easier
 https://elotus-movie.vercel.app/
 
 > In case the GIF file doesn't work, here is a google drive contains a video of a walkthrough of implemented user stories:
