@@ -41,6 +41,9 @@ const HomePage = () => {
               <Card
                 imgUrl={movie.poster_path ? `${IMAGE_BASE_URL}${POSTER_SIZE}${movie.poster_path}` : NoImage}
                 title={movie.title}
+                overview={movie.overview}
+                year={movie.release_date}
+                rating={movie.vote_average}
               />
             </div>
           </div>
