@@ -5,8 +5,8 @@ import { queryKeys } from "./queryKeys";
 import { useEffect, useState } from "react";
 import { useParams } from 'react-router-dom';
 
-export const useFetchMovies = (search: string) => {
-    return useInfiniteQuery([queryKeys.movies, search], ({ pageParam = 1 }) => fetchMovies(search, pageParam), {
+export const useFetchMovies = (search: string, mode: 'now-playing' | 'top-rated') => {
+    return useInfiniteQuery([queryKeys.movies, search, mode], ({ pageParam = 1 }) => fetchMovies(search, pageParam, mode), {
         getNextPageParam: (lastPage: Movies) => {
             if (lastPage.page < lastPage.total_pages) {
                 return lastPage.page + 1

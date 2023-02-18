@@ -8,7 +8,7 @@ import NoImage from '../../assets/no_image.jpg';
 const HomePage = () => {
   const navigate = useNavigate();
   const [query, setQuery] = useState("");
-  const { data, fetchNextPage, isLoading, isFetching, error } = useFetchMovies(query);
+  const { data, fetchNextPage, isLoading, isFetching, error } = useFetchMovies(query, 'now-playing');
   const heroPageData = data?.pages[0].results[0];
 
   const handleScroll = (e: React.UIEvent<HTMLElement>) => {
