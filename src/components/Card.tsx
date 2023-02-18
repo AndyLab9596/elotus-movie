@@ -26,7 +26,7 @@ export const Card = ({ imgUrl, title, subtitle, overview, year, rating }: Props)
                         className=" w-full h-96 md:h-auto object-cover md:w-72 rounded-t-lg md:rounded-none md:rounded-l-lg animate-fadeIn"
                         src={imgUrl}
                         alt="thumb" />
-                    <div className="text-white px-0 py-4 md:py-0 text-center md:text-left md:px-8 w-full md:w-2/3 gap-y-2">
+                    <div className="text-white px-0 py-4 md:py-0 text-center md:text-left md:px-8 w-full md:w-2/3 gap-y-2 flex flex-col justify-center items-center md:block">
                         <h2 className='text-2xl md:text-4xl font-bold pb-4 text-black'>
                             {title}
                         </h2>

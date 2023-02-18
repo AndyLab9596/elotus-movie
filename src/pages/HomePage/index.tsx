@@ -103,7 +103,7 @@ const HomePage = () => {
         ) : null
       }
       <Grid
-        className="p-4 max-w-7xl m-auto py-32"
+        className="p-4 max-w-7xl m-auto py-8 md:py-12"
         title={query ? `Search Results: ${data?.pages[0].total_results}` : ''}
         isHaveSwitch
       >

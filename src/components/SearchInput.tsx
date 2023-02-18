@@ -25,7 +25,7 @@ const SearchInput: React.FC<ISearchInput> = ({ setQuery }) => {
     return (
         <>
             <input
-                className='h-10 pr-14 md:w-96 rounded-full p-4 text-lg bg-zinc-700 text-white focus:outline-none focus:border focus:border-solid focus:border-cyan-200'
+                className='h-10 pr-14 w-48 md:w-96 rounded-full p-4 text-lg bg-zinc-700 text-white focus:outline-none focus:border focus:border-solid focus:border-cyan-200'
                 type='text'
                 placeholder='Search Movie'
                 value={text}

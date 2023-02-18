@@ -31,12 +31,16 @@ export const Grid = ({ title, children, className, isHaveSwitch }: Props) => {
         <div className={className}>
             {isHaveSwitch ? (
                 <div className='flex justify-between items-center'>
-                    <div className='flex gap-x-2'>
-                        <h2 className={`text-xl font-bold pb-4 cursor-pointer ${modeMovieFetching === 'now-playing' ? 'text-cyan-400' : 'text-cyan-800'} hover:text-cyan-800 ease-linear duration-300`} onClick={() => handleChangeTitle('now-playing')}>
+                    <div className='flex gap-x-2 justify-evenly items-center'>
+                        <h2 className={`text-sm md:text-xl font-bold pb-4 cursor-pointer 
+                        ${modeMovieFetching === 'now-playing' ? 'text-cyan-400' : 'text-cyan-800'} hover:text-cyan-800 ease-linear duration-300`}
+                            onClick={() => handleChangeTitle('now-playing')}>
                             Now Playing
                         </h2>
-                        <span>/</span>
-                        <h2 className={`text-xl font-bold pb-4 cursor-pointer ${modeMovieFetching === 'top-rated' ? 'text-cyan-400' : 'text-cyan-800'} text-cyan-400 hover:text-cyan-800 ease-linear duration-300`} onClick={() => handleChangeTitle('top-rated')}>
+                        {/* <span>/</span> */}
+                        <h2 className={`text-sm md:text-xl font-bold pb-4 cursor-pointer text-left
+                        ${modeMovieFetching === 'top-rated' ? 'text-cyan-400' : 'text-cyan-800'} text-cyan-400 hover:text-cyan-800 ease-linear duration-300`}
+                            onClick={() => handleChangeTitle('top-rated')}>
                             Top Rated
                         </h2>
                     </div>
@@ -48,7 +52,9 @@ export const Grid = ({ title, children, className, isHaveSwitch }: Props) => {
                             <button onClick={onSwitchGridLayout} type='button'>List</button>
                         </div>
                         <span
-                            className={`bg-slate-600 shadow text-white flex items-center justify-center w-1/2 rounded-full h-8 transition-all top-[4px] absolute ${isGridLayout ? 'left-1' : 'right-1'}`}>
+                            className={`bg-slate-600 shadow text-white flex items-center justify-center w-1/2 rounded-full h-8 transition-all top-[4px] absolute
+                             ${isGridLayout ? 'left-1' : 'right-1'}`}
+                        >
                             {isGridLayout ? 'Grid' : 'List'}
                         </span>
                     </div>
