@@ -2,7 +2,6 @@ import React from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { Route, Routes } from 'react-router-dom';
 import HomePage from './pages/HomePage';
-import TopRatedPage from './pages/TopRatedPage';
 import MovieInfoPage from './pages/MovieInfo';
 import useOnline from './hooks/useOnline';
 import { OffLineScreen } from './components';
@@ -25,7 +24,6 @@ const App = () => {
       <AppProvider>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/top-rated" element={<TopRatedPage />} />
           <Route path="/movie-info/:id" element={<MovieInfoPage />} />
         </Routes>
       </AppProvider>
