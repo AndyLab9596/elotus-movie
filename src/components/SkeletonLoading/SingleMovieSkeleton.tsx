@@ -30,7 +30,6 @@ export const SingleMovieSkeleton = () => {
                             <div>
                                 <h3 className='text-lg font-bold' >Director</h3>
                                 <div>
-                                    {/* {directors.map((director) => <p key={director.credit_id} >{director.name}</p>)} */}
                                     <div className=' h-24 w-full bg-zinc-300 rounded-lg'></div>
                                 </div>
                             </div>
