@@ -30,11 +30,17 @@ The following **additional** features are implemented:
 
 - [x] Infinite loading
 - [x] Using react-query for server state management and caching.
+- [x] Debounce search
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
+> In case the GIF file doesn't work, here is a google drive contains a video of a walkthrough of implemented user stories:
+https://drive.google.com/file/d/12LlX30TQK430Ab_JdTgnVN4tNtjzM4Wh/view?usp=sharing
+
 > Please record screen to a GIF file and attach link here
+https://media.giphy.com/media/vD2qx5hMqOslWBQm9p/giphy.gif
+
 
 ## License
 
