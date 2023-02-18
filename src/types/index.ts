@@ -45,3 +45,5 @@ export type MovieInfo = {
     directors: Crew[];
     cast: Cast[];
 }
+
+export type MovieMode = 'now-playing' | 'top-rated'

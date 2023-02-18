@@ -1,4 +1,4 @@
-import { Credits, Movie, MovieInfo, Movies } from "../types";
+import { Credits, Movie, MovieInfo, MovieMode, Movies } from "../types";
 import axios from 'axios';
 import { creditsUrl, movieUrl, NOW_PLAYING_BASE_URL, SEARCH_BASE_URL, TOP_RATED } from "../config";
 
@@ -16,7 +16,7 @@ export const basicFetch = async <returnType>(endPoint: string): Promise<returnTy
 }
 
 // Fetch functions
-export const fetchMovies = async (search = "", page = 1, mode: 'now-playing' | 'top-rated'): Promise<Movies> => {
+export const fetchMovies = async (search = "", page = 1, mode: MovieMode): Promise<Movies> => {
     const endpoint = search ? `${SEARCH_BASE_URL}${search}&page=${page}` : `${mode === 'now-playing' ? NOW_PLAYING_BASE_URL : TOP_RATED}&page=${page}`;
     return await basicFetch<Movies>(endpoint)
 }

@@ -1,14 +1,16 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { useFetchMovies } from '../../api/fetchHooks';
-import { Card, Grid, Header, Hero, Spinner } from '../../components'
-import { BACKDROP_SIZE, IMAGE_BASE_URL, POSTER_SIZE } from '../../config';
 import { useNavigate } from 'react-router-dom';
+import { useFetchMovies } from '../../api/fetchHooks';
 import NoImage from '../../assets/no_image.jpg';
+import { Card, Grid, Header, Hero, Spinner } from '../../components';
+import { BACKDROP_SIZE, IMAGE_BASE_URL, POSTER_SIZE } from '../../config';
+import { useAppContext } from '../../context/AppContext';
 
 const HomePage = () => {
   const navigate = useNavigate();
+  const {modeMovieFetching} = useAppContext();
   const [query, setQuery] = useState("");
-  const { data, fetchNextPage, isLoading, isFetching, error } = useFetchMovies(query, 'now-playing');
+  const { data, fetchNextPage, isLoading, isFetching, error } = useFetchMovies(query, modeMovieFetching);
   const heroPageData = data?.pages[0].results[0];
 
   const handleScroll = (e: React.UIEvent<HTMLElement>) => {
@@ -102,7 +104,7 @@ const HomePage = () => {
       }
       <Grid
         className="p-4 max-w-7xl m-auto py-32"
-        title={query ? `Search Results: ${data?.pages[0].total_results}` : 'Now Playing Movies'}
+        title={query ? `Search Results: ${data?.pages[0].total_results}` : ''}
         isHaveSwitch
       >
         {data && data.pages ? data.pages.map((page) => page.results.map((movie) => (
