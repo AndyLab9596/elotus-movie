@@ -18,7 +18,6 @@ const AppContext = createContext<InitialStateType>(initialState);
 
 const AppProvider = ({ children }: IAppProvider) => {
     const [isGridLayout, setIsGridLayout] = useState(true);
-
     const onSwitchGridLayout = () => setIsGridLayout(prev => !prev);
 
     return (

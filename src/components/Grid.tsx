@@ -12,6 +12,9 @@ export const Grid = ({ title, children, className, isHaveSwitch }: Props) => {
     const { isGridLayout, onSwitchGridLayout } = useAppContext();
 
     const layoutClass = isGridLayout ? 'grid grid-cols-auto-fill gap-8' : 'flex flex-col items-start gap-y-8';
+    const handleChangeTitle = () => {
+        console.log('change title')
+    }
 
     return (
         <div className={className}>
@@ -29,7 +32,7 @@ export const Grid = ({ title, children, className, isHaveSwitch }: Props) => {
                     </span>
                 </div>
             ) : null}
-            <h2 className='text-xl font-bold pb-4'>{title}</h2>
+            <h2 className='text-xl font-bold pb-4' onClick={handleChangeTitle}>{title}</h2>
             <div className={`${layoutClass}`}>
                 {children}
             </div>
