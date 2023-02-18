@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { useFetchMovies } from '../../api/fetchHooks';
 import { Card, Grid, Header, Hero, Spinner } from '../../components'
 import { BACKDROP_SIZE, IMAGE_BASE_URL, POSTER_SIZE } from '../../config';
@@ -29,7 +29,7 @@ const HomePage = () => {
     const { screenY } = e.targetTouches[0];
     setStartPoint(screenY);
   };
-  const pull = (e: TouchEvent) => {
+  const pull = useCallback((e: TouchEvent) => {
     /**
      * get the current user touch event data
      */
@@ -48,13 +48,13 @@ const HomePage = () => {
     let pullLength = startPoint < screenY ? Math.abs(screenY - startPoint) : 0;
     setPullChange(pullLength);
     console.log({ screenY, startPoint, pullLength, pullChange });
-  };
+  }, [pullChange, startPoint]);
 
-  const endPull = (e: TouchEvent) => {
+  const endPull = useCallback((e: TouchEvent) => {
     setStartPoint(0);
     setPullChange(0);
     if (pullChange as number > 220) initLoading();
-  };
+  },[pullChange]);
   // add and remove event listeners
   useEffect(() => {
     window.addEventListener("touchstart", pullStart);
@@ -65,7 +65,7 @@ const HomePage = () => {
       window.removeEventListener("touchmove", pull);
       window.removeEventListener("touchend", endPull);
     };
-  });
+  }, [endPull, pull]);
 
 
   if (error) return <div>Something went wrong</div>
@@ -79,7 +79,7 @@ const HomePage = () => {
           strokeWidth={1.5}
           stroke="currentColor"
           className={`w-6 h-6 `}
-          style={{ transform: `rotate(${pullChange}deg)`,}}
+          style={{ transform: `rotate(${pullChange}deg)`, }}
         >
           <path
             strokeLinecap="round"
