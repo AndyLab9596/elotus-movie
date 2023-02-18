@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { LegacyRef } from 'react'
 import { useAppContext } from '../context/AppContext';
 import Thumb from './Thumb';
 import { useLocation } from 'react-router-dom'
@@ -12,15 +12,14 @@ type Props = {
     rating?: number;
 }
 
-export const Card = ({ imgUrl, title, subtitle, overview, year, rating }: Props) => {
+export const Card = React.forwardRef(({ imgUrl, title, subtitle, overview, year, rating }: Props, ref: LegacyRef<HTMLDivElement> | undefined) => {
     const { isGridLayout } = useAppContext();
     const location = useLocation();
     const isInMovieInfoPage = location.pathname.startsWith('/movie-info/');
 
     if (!isGridLayout && !isInMovieInfoPage) {
         return (
-
-            <div className="flex justify-center">
+            <div className="flex justify-center" ref={ref ? ref : undefined}>
                 <div className="flex flex-col md:flex-row md:max-w-full rounded-lg bg-white shadow-lg">
                     <img
                         className=" w-full h-96 md:h-auto object-cover md:w-72 rounded-t-lg md:rounded-none md:rounded-l-lg animate-fadeIn"
@@ -42,7 +41,7 @@ export const Card = ({ imgUrl, title, subtitle, overview, year, rating }: Props)
         )
     } else {
         return (
-            <div className="relative h-full">
+            <div className="relative h-full" ref={ref ? ref : undefined}>
                 <Thumb imgUrl={imgUrl} />
                 <div className="absolute w-full bottom-0 px-4 py-2 rounded-b-xl bg-zinc-800">
                     <h2 className='text-cyan-200 text-center text-sm truncate'>
@@ -53,4 +52,4 @@ export const Card = ({ imgUrl, title, subtitle, overview, year, rating }: Props)
             </div>
         );
     }
-}
+})
