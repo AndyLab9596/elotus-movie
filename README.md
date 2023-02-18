@@ -45,6 +45,9 @@ https://drive.google.com/file/d/12LlX30TQK430Ab_JdTgnVN4tNtjzM4Wh/view?usp=shari
 > Please record screen to a GIF file and attach link here
 https://media.giphy.com/media/vD2qx5hMqOslWBQm9p/giphy.gif
 
+> In case you wan to start the project on local you need to create env and add this key to it
+REACT_APP_API_KEY=b712530d3cba99dc2500bcb57cb14c25
+
 
 ## License
 
