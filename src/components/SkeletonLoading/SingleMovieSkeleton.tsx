@@ -16,12 +16,12 @@ export const SingleMovieSkeleton = () => {
             </div>
             <div className='relative w-full h-auto p-4 animate-pulse'>
                 <div className='relative h-full min-h-[40rem] flex flex-col md:flex-row max-w-7xl p-4 m-auto z-10 rounded-xl bg-zinc-800 bg-opacity-50'>
-                    <div className="relative w-full h-96 md:h-auto md:w-1/3">
-                        <div className='rounded-lg w-[416px] h-[624px] bg-zinc-300'></div>
+                    <div className="relative w-full h-auto md:w-1/3">
+                        <div className='rounded-lg md:w-[416px] h-[624px] w-full bg-zinc-300'></div>
                         <div className='absolute top-4 left-4 rounded-full bg-white w-10 h-10 flex justify-center items-center'>
                         </div>
                     </div>
-                    <div className="text-white px-0 py-4 md:py-0 text-center md:text-left md:px-8 w-full md:w-2/3">
+                    <div className="text-white px-0 py-4 md:py-0 text-center md:text-left md:px-8 w-full md:w-1/2 md:ml-auto xl:ml-0">
                         <div className='w-full h-10 bg-zinc-300 rounded-lg'>
                         </div>
                         <h3 className='text-lg font-bold'>Summary</h3>

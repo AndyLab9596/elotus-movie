@@ -20,8 +20,8 @@ type Props = {
 export const SingleMovieInfo = ({ thumbUrl, backgroundImgUrl, title, year, summary, rating, directors, time, budget, revenue }: Props) => {
   return (
     <div className='relative w-full h-auto p-4'>
-      <div className='relative h-full min-h-[40rem] flex flex-col md:flex-row max-w-7xl p-4 m-auto z-10 rounded-xl bg-zinc-800 bg-opacity-50'>
-        <div className="relative w-full h-96 md:h-auto md:w-1/3">
+      <div className='relative h-full min-h-[20rem] flex flex-col md:flex-row max-w-7xl p-4 m-auto z-10 rounded-xl bg-zinc-800 bg-opacity-50'>
+        <div className="relative w-full h-auto md:h-auto md:w-1/3">
           <Thumb imgUrl={thumbUrl} />
           <div className='absolute top-4 left-4 rounded-full bg-white w-10 h-10 flex justify-center items-center text-black text-sm font-bold'>
             {rating}
@@ -40,11 +40,13 @@ export const SingleMovieInfo = ({ thumbUrl, backgroundImgUrl, title, year, summa
                 {directors.map((director) => <p key={director.credit_id} >{director.name}</p>)}
               </div>
             </div>
-            <div className='mt-8'>
+            <div className='mt-8 '>
               <h3 className='text-lg font-bold'>Movie data</h3>
-              <Pill className='ml-0' text={`Running time: ${calcTime(time)}`} />
-              <Pill text={`Budget: ${convertMoney(budget)}`} />
-              <Pill text={`Revenue: ${convertMoney(revenue)}`} />
+              <div className='flex flex-col sm:flex-row'>
+                <Pill className='sm:ml-0' text={`Running time: ${calcTime(time)}`} />
+                <Pill text={`Budget: ${convertMoney(budget)}`} />
+                <Pill text={`Revenue: ${convertMoney(revenue)}`} />
+              </div>
             </div>
           </div>
         </div>
