@@ -51,7 +51,7 @@ REACT_APP_API_KEY=b712530d3cba99dc2500bcb57cb14c25
 
 ## License
 
-    Copyright [2016] [your-name]
+    Copyright [2016] [Chung Thien Vy]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
