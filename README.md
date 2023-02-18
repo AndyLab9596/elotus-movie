@@ -31,9 +31,12 @@ The following **additional** features are implemented:
 - [x] Infinite loading
 - [x] Using react-query for server state management and caching.
 - [x] Debounce search
+- [x] Deployed on vercel
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
+
+> I also deployed this project on vercel so you can browse it more easily
 
 > In case the GIF file doesn't work, here is a google drive contains a video of a walkthrough of implemented user stories:
 https://drive.google.com/file/d/12LlX30TQK430Ab_JdTgnVN4tNtjzM4Wh/view?usp=sharing
