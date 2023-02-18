@@ -1,6 +1,7 @@
 import React from 'react'
 import { useAppContext } from '../context/AppContext';
 import Thumb from './Thumb';
+import { useLocation } from 'react-router-dom'
 
 type Props = {
     imgUrl: string;
@@ -13,20 +14,10 @@ type Props = {
 
 export const Card = ({ imgUrl, title, subtitle, overview, year, rating }: Props) => {
     const { isGridLayout } = useAppContext();
+    const location = useLocation();
+    const isInMovieInfoPage = location.pathname.startsWith('/movie-info/');
 
-    if (isGridLayout) {
-        return (
-            <div className="relative h-full">
-                <Thumb imgUrl={imgUrl} />
-                <div className="absolute w-full bottom-0 px-4 py-2 rounded-b-xl bg-zinc-800">
-                    <h2 className='text-cyan-200 text-center text-sm truncate'>
-                        {title}
-                    </h2>
-                    {subtitle ? <p className='text-cyan-200 text-center text-xs truncate'>{subtitle}</p> : null}
-                </div>
-            </div>
-        )
-    } else {
+    if (!isGridLayout && !isInMovieInfoPage) {
         return (
 
             <div className="flex justify-center">
@@ -49,7 +40,17 @@ export const Card = ({ imgUrl, title, subtitle, overview, year, rating }: Props)
                 </div>
             </div>
         )
+    } else {
+        return (
+            <div className="relative h-full">
+                <Thumb imgUrl={imgUrl} />
+                <div className="absolute w-full bottom-0 px-4 py-2 rounded-b-xl bg-zinc-800">
+                    <h2 className='text-cyan-200 text-center text-sm truncate'>
+                        {title}
+                    </h2>
+                    {subtitle ? <p className='text-cyan-200 text-center text-xs truncate'>{subtitle}</p> : null}
+                </div>
+            </div>
+        );
     }
-
-
 }

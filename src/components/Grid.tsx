@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { useAppContext } from '../context/AppContext';
+import { useLocation } from 'react-router-dom'
 
 type Props = {
     title: string;
@@ -10,8 +11,17 @@ type Props = {
 
 export const Grid = ({ title, children, className, isHaveSwitch }: Props) => {
     const { isGridLayout, onSwitchGridLayout } = useAppContext();
+    const location = useLocation();
+    const isInMovieInfoPage = location.pathname.startsWith('/movie-info/')
 
-    const layoutClass = isGridLayout ? 'grid grid-cols-auto-fill gap-8' : 'flex flex-col items-start gap-y-8';
+    const layoutClass = useMemo(() => {
+        if (isInMovieInfoPage) {
+            return 'grid grid-cols-auto-fill gap-8'
+        } else {
+            return isGridLayout ? 'grid grid-cols-auto-fill gap-8' : 'flex flex-col items-start gap-y-8'
+        }
+    }, [isInMovieInfoPage, isGridLayout]);
+    
     const handleChangeTitle = () => {
         console.log('change title')
     }
@@ -27,7 +37,7 @@ export const Grid = ({ title, children, className, isHaveSwitch }: Props) => {
                         <button onClick={onSwitchGridLayout} type='button'>List</button>
                     </div>
                     <span
-                        className={`bg-slate-600 shadow text-white flex items-center justify-center w-1/2 rounded-full h-8 transition-all top-[4px] absolute ${isGridLayout ? 'left' : 'right'}-1`}>
+                        className={`bg-slate-600 shadow text-white flex items-center justify-center w-1/2 rounded-full h-8 transition-all top-[4px] absolute ${isGridLayout ? 'left-1' : 'right-1'}`}>
                         {isGridLayout ? 'Grid' : 'List'}
                     </span>
                 </div>
