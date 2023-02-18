@@ -9,7 +9,7 @@ const Thumb = ({ imgUrl }: Props) => {
         <img
             src={imgUrl}
             placeholder='blur'
-            className='rounded-lg object-cover'
+            className='rounded-lg object-cover animate-fadeIn'
             alt="thumb"
         />
     )

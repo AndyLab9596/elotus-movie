@@ -17,7 +17,7 @@ export const Header: React.FC<IHeader> = ({ setQuery }) => {
                             <span className='text-white text-3xl tracking-wider font-bold' >ELOTUS MOVIE</span>
                         </div>
                         <div className='absolute md:invisible pt-2'>
-                            <img src="../assets/rmdb-logo-small.svg" width={42} height={42} alt='rmdb-logo-small' />
+                            <img src="../assets/rmdb-logo-small.svg" width={42} height={42} alt='rmdb-logo-small' className='animate-fadeIn' />
                             <RmdbLogoSmall className='w-[42px] h-[42px]' />
                         </div>
                     </div>
