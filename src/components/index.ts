@@ -10,6 +10,7 @@ import { Card } from "./Card";
 import { Breadcrumb } from './Breadcrumb';
 import { SingleMovieInfo } from './SingleMovieInfo';
 import { SingleMovieSkeleton } from './SkeletonLoading/SingleMovieSkeleton';
+import { ErrorDisplay } from './ErrorDisplay';
 
 export {
     Header,
@@ -23,5 +24,6 @@ export {
     Breadcrumb,
     SingleMovieInfo,
     OffLineScreen,
-    SingleMovieSkeleton
+    SingleMovieSkeleton,
+    ErrorDisplay
 }

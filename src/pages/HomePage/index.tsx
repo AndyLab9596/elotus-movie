@@ -2,7 +2,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useFetchMovies } from '../../api/fetchHooks';
 import NoImage from '../../assets/no_image.jpg';
-import { Card, Grid, Header, Hero, Spinner } from '../../components';
+import { Card, ErrorDisplay, Grid, Header, Hero, Spinner } from '../../components';
 import { BACKDROP_SIZE, IMAGE_BASE_URL, POSTER_SIZE } from '../../config';
 import { useAppContext } from '../../context/AppContext';
 
@@ -82,7 +82,11 @@ const HomePage = () => {
   }, [endPull, pull]);
 
 
-  if (error) return <div>Something went wrong</div>
+  if (error) {
+    return (
+      <ErrorDisplay error={error as Error} />
+    )
+  }
 
   return (
     <main className="relative h-screen overflow-y-scroll" ref={refreshCont} style={{ marginTop: pullChange as number / 3.118 || "" }}>

@@ -1,12 +1,16 @@
 import { useFetchMovieInfo } from '../../api/fetchHooks';
-import NoImage from '../../assets/no_image.jpg';
-import { Breadcrumb, Card, Grid, Header, SingleMovieInfo, SingleMovieSkeleton } from '../../components';
+import { Breadcrumb, Card, ErrorDisplay, Grid, Header, SingleMovieInfo, SingleMovieSkeleton } from '../../components';
 import { BACKDROP_SIZE, IMAGE_BASE_URL, POSTER_SIZE } from '../../config';
+import NoImage from '../../assets/no_image.jpg'
 
 const MovieInfoPage = () => {
   const { movieInfo, loading, error } = useFetchMovieInfo();
-  console.log(error);
-  console.log('movieInfo', movieInfo);
+
+  if (error) {
+    return (
+      <ErrorDisplay error={error} />
+    )
+  }
 
   if (loading) {
     return (
