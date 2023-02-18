@@ -9,6 +9,7 @@ import { Grid } from "./Grid";
 import { Card } from "./Card";
 import { Breadcrumb } from './Breadcrumb';
 import { SingleMovieInfo } from './SingleMovieInfo';
+import { SingleMovieSkeleton } from './SkeletonLoading/SingleMovieSkeleton';
 
 export {
     Header,
@@ -21,5 +22,6 @@ export {
     Spinner,
     Breadcrumb,
     SingleMovieInfo,
-    OffLineScreen
+    OffLineScreen,
+    SingleMovieSkeleton
 }

@@ -29,18 +29,17 @@ export const Grid = ({ title, children, className, isHaveSwitch }: Props) => {
 
     return (
         <div className={className}>
-
-            <div className='flex justify-between items-center'>
-                <div className='flex gap-x-2'>
-                    <h2 className={`text-xl font-bold pb-4 cursor-pointer ${modeMovieFetching === 'now-playing' ? 'text-cyan-400' : 'text-cyan-800'} hover:text-cyan-800 ease-linear duration-300`} onClick={() => handleChangeTitle('now-playing')}>
-                        Now Playing
-                    </h2>
-                    <span>/</span>
-                    <h2 className={`text-xl font-bold pb-4 cursor-pointer ${modeMovieFetching === 'top-rated' ? 'text-cyan-400' : 'text-cyan-800'} text-cyan-400 hover:text-cyan-800 ease-linear duration-300`} onClick={() => handleChangeTitle('top-rated')}>
-                        Top Rated
-                    </h2>
-                </div>
-                {isHaveSwitch ? (
+            {isHaveSwitch ? (
+                <div className='flex justify-between items-center'>
+                    <div className='flex gap-x-2'>
+                        <h2 className={`text-xl font-bold pb-4 cursor-pointer ${modeMovieFetching === 'now-playing' ? 'text-cyan-400' : 'text-cyan-800'} hover:text-cyan-800 ease-linear duration-300`} onClick={() => handleChangeTitle('now-playing')}>
+                            Now Playing
+                        </h2>
+                        <span>/</span>
+                        <h2 className={`text-xl font-bold pb-4 cursor-pointer ${modeMovieFetching === 'top-rated' ? 'text-cyan-400' : 'text-cyan-800'} text-cyan-400 hover:text-cyan-800 ease-linear duration-300`} onClick={() => handleChangeTitle('top-rated')}>
+                            Top Rated
+                        </h2>
+                    </div>
                     <div className="shadow rounded-full h-10 mt-4 flex p-1 relative items-center mb-8 w-1/2 self-end">
                         <div className="w-full flex justify-center">
                             <button onClick={onSwitchGridLayout} type='button'>Grid</button>
@@ -53,8 +52,8 @@ export const Grid = ({ title, children, className, isHaveSwitch }: Props) => {
                             {isGridLayout ? 'Grid' : 'List'}
                         </span>
                     </div>
-                ) : null}
-            </div>
+                </div>
+            ) : null}
             <div className={`${layoutClass}`}>
                 {children}
             </div>

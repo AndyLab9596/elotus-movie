@@ -49,8 +49,7 @@ const HomePage = () => {
      */
     let pullLength = startPoint < screenY ? Math.abs(screenY - startPoint) : 0;
     setPullChange(pullLength);
-    console.log({ screenY, startPoint, pullLength, pullChange });
-  }, [pullChange, startPoint]);
+  }, [startPoint]);
 
   const endPull = useCallback((e: TouchEvent) => {
     setStartPoint(0);
@@ -71,6 +70,7 @@ const HomePage = () => {
 
 
   if (error) return <div>Something went wrong</div>
+
   return (
     <main className="relative h-screen overflow-y-scroll" onScroll={handleScroll} ref={refreshCont} style={{ marginTop: pullChange as number / 3.118 || "" }}>
       <div className={`refresh-icon p-2 rounded-full absolute top-1/2 w-full z-10 left-1/2 -translate-x-5 ${startPoint ? 'block' : 'hidden'}`}>

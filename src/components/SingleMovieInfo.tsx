@@ -49,8 +49,6 @@ export const SingleMovieInfo = ({ thumbUrl, backgroundImgUrl, title, year, summa
           </div>
         </div>
       </div>
-      {/* <Image priority placeholder='blur' blurDataURL='/placeholder.jpg' objectFit='cover' objectPosition='center' layout='fill' src={backgroundImgUrl} alt="thumb" /> */}
-      {/* <img className='object-cover object-center w-full' src={backgroundImgUrl} alt='thumb' /> */}
     </div>
   )
 }

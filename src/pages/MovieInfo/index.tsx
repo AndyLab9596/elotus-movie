@@ -1,5 +1,5 @@
 import { useFetchMovieInfo } from '../../api/fetchHooks';
-import { Breadcrumb, Card, Grid, Header, SingleMovieInfo, Spinner } from '../../components';
+import { Breadcrumb, Card, Grid, Header, SingleMovieInfo, SingleMovieSkeleton, Spinner } from '../../components';
 import { BACKDROP_SIZE, IMAGE_BASE_URL, POSTER_SIZE } from '../../config';
 import NoImage from '../../assets/no_image.jpg'
 
@@ -10,9 +10,7 @@ const MovieInfoPage = () => {
 
   if (loading) {
     return (
-      <div className='h-[100vh] flex justify-center items-center'>
-        <Spinner />
-      </div>
+      <SingleMovieSkeleton />
     )
   }
 
